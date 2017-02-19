@@ -19,3 +19,5 @@ MorseWord.prototype.morseForLetter = function(letter) {
 MorseWord.prototype.getLetters = function() {
     return this.letters;
 };
+
+module.exports = MorseWord;
