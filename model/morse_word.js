@@ -53,6 +53,34 @@ MorseWord.prototype.morseForLetter = function(letter) {
         return [".", ".", "-"];
     } else if (letter.toLowerCase() == "v") {
         return [".", ".", ".", "-"];
+    } else if (letter.toLowerCase() == "w") {
+        return [".", "-", "-"];
+    } else if (letter.toLowerCase() == "x") {
+        return ["-", ".", ".", "-"];
+    } else if (letter.toLowerCase() == "y") {
+        return ["-", ".", "-", "-"];
+    } else if (letter.toLowerCase() == "z") {
+        return ["-", "-", ".", "."];
+    } else if (letter.toLowerCase() == "1") {
+        return [".", "-", "-", "-", "-"];
+    } else if (letter.toLowerCase() == "2") {
+        return [".", ".", "-", "-", "-"];
+    } else if (letter.toLowerCase() == "3") {
+        return [".", ".", ".", "-", "-"];
+    } else if (letter.toLowerCase() == "4") {
+        return [".", ".", ".", ".", "-"];
+    } else if (letter.toLowerCase() == "5") {
+        return [".", ".", ".", ".", "."];
+    } else if (letter.toLowerCase() == "6") {
+        return ["-", ".", ".", ".", "."];
+    } else if (letter.toLowerCase() == "7") {
+        return ["-", "-", ".", ".", "."];
+    } else if (letter.toLowerCase() == "8") {
+        return ["-", "-", "-", ".", "."];
+    } else if (letter.toLowerCase() == "9") {
+        return ["-", "-", "-", "-", "."];
+    } else if (letter.toLowerCase() == "0") {
+        return ["-", "-", "-", "-", "-"];
     }
 };
 
