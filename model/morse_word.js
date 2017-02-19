@@ -1,6 +1,9 @@
 
 function MorseWord(word) {
-
+    this.letters = [];
+    for (letter in word) {
+        this.letters.push(this.morseForLetter(letter));
+    }
 }
 
 MorseWord.prototype.morseForLetter = function(letter) {
@@ -14,5 +17,5 @@ MorseWord.prototype.morseForLetter = function(letter) {
 };
 
 MorseWord.prototype.getLetters = function() {
-
+    return this.letters;
 };
