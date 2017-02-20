@@ -1,5 +1,13 @@
 var exec = require('child_process').exec;
-var sleep = require('sleep');
+var Future = require('fibers/future'), wait = Future.wait;
+
+function sleep(s) {
+    var future = new Future;
+    setTimeout(function() {
+        future.return();
+    }, s * 1000);
+    return future;
+}
 
 function MorseTransmitter() {
     // make static???????????????
@@ -22,23 +30,23 @@ MorseTransmitter.prototype.transmitWord = function(word) {
 
             } else if (signal == ".") {
                 this.executeScript("LEDON");
-                //sleep(this.DOT_LENGTH);
+                sleep(this.DOT_LENGTH).wait();
                 this.executeScript("LEDOFF");
             } else if (signal == "-") {
                 this.executeScript("LEDON");
-                //sleep(this.DASH_LENGTH);
+                sleep(this.DASH_LENGTH).wait();
                 this.executeScript("LEDOFF");
             }
-            //sleep(this.LETTER_BREAK_LENGTH);
+            sleep(this.LETTER_BREAK_LENGTH).wait();
         }
-        //sleep(this.WORD_BREAK_LENGTH);
+        sleep(this.WORD_BREAK_LENGTH).wait();
     }
-};
+}.future();
 
 MorseTransmitter.prototype.executeScript = function(script) {
+    console.log(script);
     // http://stackoverflow.com/questions/1880198/how-to-execute-shell-command-in-javascript
-    /*
-    exec("echo " + script,
+    exec("python ./resources/" + script + ".py",
         function(error, stdout, stderr) {
             console.log('stdout: ' + stdout);
             console.log('stderr: ' + stderr);
@@ -47,8 +55,6 @@ MorseTransmitter.prototype.executeScript = function(script) {
             }
         }
     );
-    */
-    //console.log(script);
 };
 
 module.exports = MorseTransmitter;
