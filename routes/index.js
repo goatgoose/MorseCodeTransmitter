@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.post('/msgToMorse', function(req, res, next) {
     var transmitter = new MorseTransmitter(); // should def be static
 
-    var msg = req.body.msg.split(" ");
+    var msg = req.body.message.split(" ");
     var morseWords = [];
     for (var word in msg) {
         var morseWord = new MorseWord(word);
@@ -21,7 +21,7 @@ router.post('/msgToMorse', function(req, res, next) {
         transmitter.transmitWord(morseWord);
     }
 
-    res.send({"morseWords" : morseWords});
+    res.send({"morseWords": morseWords});
 });
 
 module.exports = router;

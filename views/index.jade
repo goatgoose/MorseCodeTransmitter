@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    script(src='javascripts/transmitter.js')
+    #history
+    #footer
+        input(type='text', id='translateTextbox', name='translate-textbox')
