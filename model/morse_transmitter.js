@@ -41,6 +41,10 @@ MorseTransmitter.prototype.executeScript = function(script) {
     );
 };
 
+MorseTransmitter.prototype.executeTest = function() {
+    exec("sudo python resources/LEDON.py");
+};
+
 MorseTransmitter.prototype.sleep = function(duration) {
     // http://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
     var now = new Date().getTime();
