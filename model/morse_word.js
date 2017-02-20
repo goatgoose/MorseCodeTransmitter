@@ -1,7 +1,7 @@
 
 function MorseWord(word) {
+    this.word = word;
     this.letters = [];
-    console.log(word);
     for (var letterIndex in word) {
         var letter = word[letterIndex];
         this.letters.push(this.morseForLetter(letter));
