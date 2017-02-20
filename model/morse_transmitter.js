@@ -9,8 +9,12 @@ function MorseTransmitter() {
 }
 
 MorseTransmitter.prototype.transmitWord = function(word) {
-    for (var letter in word.getLetters()) {
-        for (var signal in letter) {
+    var letters = word.getLetters();
+    for (var letterIndex in letters) {
+        var letter = letters[letterIndex];
+        for (var signalIndex in letter) {
+            var signal = letter[signalIndex];
+
             if (signal == undefined) {
 
             } else if (signal == ".") {
