@@ -11,9 +11,8 @@ function MorseTransmitter() {
 
 MorseTransmitter.prototype.transmitWord = function(word) {
     console.log(word.word);
-    var letters = word.getLetters();
-    for (var letterIndex in letters) {
-        var letter = letters[letterIndex];
+    for (var letterIndex in word.letters) {
+        var letter = word.letters[letterIndex];
         console.log(word.word[letterIndex]);
         for (var signalIndex in letter) {
             var signal = letter[signalIndex];
