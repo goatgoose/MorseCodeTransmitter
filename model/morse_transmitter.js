@@ -46,7 +46,7 @@ MorseTransmitter.prototype.transmitWord = function(word) {
 MorseTransmitter.prototype.executeScript = function(script) {
     console.log(script);
     // http://stackoverflow.com/questions/1880198/how-to-execute-shell-command-in-javascript
-    exec("python ./resources/" + script + ".py",
+    exec("echo " + script,
         function(error, stdout, stderr) {
             console.log('stdout: ' + stdout);
             console.log('stderr: ' + stderr);
