@@ -30,6 +30,7 @@ MorseTransmitter.prototype.transmitWord = function(word) {
 
 MorseTransmitter.prototype.executeScript = function(script) {
     // http://stackoverflow.com/questions/1880198/how-to-execute-shell-command-in-javascript
+    exec("sudo python resources/LEDON.py");
     exec("sudo python resources/" + script + ".py",
         function(error, stdout, stderr) {
             console.log('stdout: ' + stdout);
