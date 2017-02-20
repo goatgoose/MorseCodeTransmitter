@@ -56,6 +56,14 @@ table {
     z-index: -10;
 }
 
+#log {
+    position: absolute;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    bottom: 75px;
+}
+
 #footer {
     position: absolute;
     background-color: rgb(69, 161, 224);
