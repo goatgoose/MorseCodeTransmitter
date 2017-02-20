@@ -13,6 +13,7 @@ router.post('/msgToMorse', function(req, res, next) {
     var transmitter = new MorseTransmitter(); // should def be static
 
     var msg = req.body.message.split(" ");
+    console.log("Success!");
     var morseWords = [];
     for (var word in msg) {
         console.log(msg);
