@@ -1,12 +1,16 @@
 
-function sendMessage(message) {
+function sendMessage(text) {
+    var data = {
+        message: text
+    };
     $.ajax({
         type: "POST",
-        data: message,
+        data: data,
         url: "/msgToMorse",
         dataType: "JSON",
         success: function(response) {
-            console.log(response.morseWords);
+            console.log(response.message);
+            $("#log").append("<p>" + response.message + "</p>");
         }
     });
 }

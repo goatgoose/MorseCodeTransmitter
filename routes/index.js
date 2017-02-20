@@ -18,12 +18,12 @@ router.post('/msgToMorse', function(req, res, next) {
     var morseWords = [];
     for (var word in msg) {
         var morseWord = new MorseWord(word);
-        morseWords.push(morseWord);
+        morseWords.push(morseWord.getLetters());
 
         transmitter.transmitWord(morseWord);
     }
 
-    res.send({"morseWords": morseWords});
+    res.send({"message": req.body.message});
 });
 
 module.exports = router;
