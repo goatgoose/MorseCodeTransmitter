@@ -15,6 +15,7 @@ router.post('/msgToMorse', function(req, res, next) {
     var msg = req.body.message.split(" ");
     var morseWords = [];
     for (var word in msg) {
+        exec("sudo python /resources/LEDON.py");
         var morseWord = new MorseWord(word);
         morseWords.push(morseWord.getLetters());
 
