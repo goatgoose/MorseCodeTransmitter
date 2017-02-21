@@ -18,6 +18,7 @@ function sendMessage(text) {
                     for (var symbolIndex in letter) {
                         translationString += letter[symbolIndex] + " ";
                     }
+                    translationString += "  ";
                 }
                 translationString += "    ";
             }
